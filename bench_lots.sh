@@ -1,11 +1,11 @@
 #! /bin/bash
 
-for i in {1..10}
+for i in {4..9}
 do
   file=$i.result
-  for j in {1..19}
+  for j in {0..4}
   do
-    cmd="$HOME/bench/bench.sh sassafras $j"
+    cmd="./bench.sh $(hostname) $j"
     echo ${j},$($cmd | cut -d\" -f4) >> $file
   done
 done

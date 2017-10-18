@@ -3,10 +3,10 @@
 master=$1
 setters=$2
 
-redis="$HOME/.bin/redis-server redis-unprotect.conf"
+redis="redis-server redis.conf"
 $redis > redis.out &
 
-bench=$HOME/.bin/redis-benchmark
+bench=redis-benchmark
 setter_command="$bench -h ${master} -t set -l --csv -a guest"
 getter_command="$bench -h ${master} -t get --csv -a guest"
 
